@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Alunos | NSA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logos">
+                <img src="img/logo-etec.png" alt="Logotipo Etec" class="logo">
+                <img src="img/logo-saopaulo.png" alt="Logotipo Governo de São Paulo" class="logo">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="professor.html">Início</a></li>
+                    <li><a href="gerenciar.html">Gerenciar</a></li>
+                    <li><a href="aulas-do-dia.html">Aulas do Dia</a></li>
+                    <li><a href="mensagens.html">Mensagens</a></li>
+                    <li><a href="relatorios.html">Relatórios</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <img src="img/foto-professor.jpg" alt="Foto do Professor" class="user-photo">
+                <div class="user-info">
+                    <span id="user-name">Professor(a)</span>
+                    <a href="login.html" class="logout-link">Sair</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <div class="sidebar">
+            <div class="profile-card">
+                <img src="img/foto-professor.jpg" alt="Foto do Professor" class="user-photo-large">
+                <div class="user-info-large">
+                    <span id="professor-name"></span>
+                    <span id="professor-code"></span>
+                    <div class="block-info">
+                        <h4>TIPO DE USUÁRIO: ADMINISTRADOR</h4>
+                        <p>Bloco de notas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <section id="lista-alunos-section" class="content-section">
+                <h3>Diário de Classe Digital: Chamadas e Gestão de Alunos</h3>
+                <p>Realize a chamada do dia e use as ferramentas para editar, excluir ou adicionar alunos (Simulação).</p>
+                
+                <div class="controls-row" style="margin-bottom: 20px; display: flex; justify-content: space-between;">
+                    <input type="text" id="student-search" placeholder="Buscar aluno por RM ou nome..." style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 60%;">
+                    <button id="abrir-cadastro" class="btn-gerenciar" style="width: 35%; background-color: #28a745; margin: 0;">
+                        <i class="fas fa-plus"></i> Adicionar Novo Aluno
+                    </button>
+                </div>
+
+                <table class="students-table" style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                    <thead>
+                        <tr style="background-color: #007bff; color: white;">
+                            <th style="padding: 12px; text-align: left;">RM</th>
+                            <th style="padding: 12px; text-align: left;">Nome do Aluno</th>
+                            <th style="padding: 12px; text-align: left;">Turma</th>
+                            <th style="padding: 12px; text-align: center; width: 100px;">Chamada</th> 
+                            <th style="padding: 12px; text-align: center; width: 100px;">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-table-body">
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 10px;">12345</td>
+                            <td style="padding: 10px;">ANA SILVA</td>
+                            <td style="padding: 10px;">2º Info - Bloco A</td>
+                            <td style="padding: 10px; text-align: center;" data-status="P">
+                                <button class="chamada-btn presente" data-status="P" onclick="marcarPresencaFalta(this, 'P')">P</button>
+                                <button class="chamada-btn falta" data-status="F" onclick="marcarPresencaFalta(this, 'F')">F</button>
+                            </td>
+                            <td style="padding: 10px; text-align: center;">
+                                <button class="action-btn-edit" onclick="alert('Editar Aluno 12345: Funcionalidade de Edição de Dados em desenvolvimento.')" title="Editar"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn-delete" onclick="if(confirm('Tem certeza que deseja excluir Ana Silva (RM: 12345)?')) { this.closest('tr').remove(); }" title="Excluir"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                        <tr style="background-color: #f9f9f9; border-bottom: 1px solid #eee;">
+                            <td style="padding: 10px;">67890</td>
+                            <td style="padding: 10px;">BRUNO LIMA</td>
+                            <td style="padding: 10px;">3º Info - Bloco B</td>
+                            <td style="padding: 10px; text-align: center;" data-status="P">
+                                <button class="chamada-btn presente" data-status="P" onclick="marcarPresencaFalta(this, 'P')">P</button>
+                                <button class="chamada-btn falta" data-status="F" onclick="marcarPresencaFalta(this, 'F')">F</button>
+                            </td>
+                            <td style="padding: 10px; text-align: center;">
+                                <button class="action-btn-edit" onclick="alert('Editar Aluno 67890: Funcionalidade de Edição de Dados em desenvolvimento.')" title="Editar"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn-delete" onclick="if(confirm('Tem certeza que deseja excluir Bruno Lima (RM: 67890)?')) { this.closest('tr').remove(); }" title="Excluir"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 10px;">11223</td>
+                            <td style="padding: 10px;">CARLA SOUZA</td>
+                            <td style="padding: 10px;">2º Info - Bloco A</td>
+                            <td style="padding: 10px; text-align: center;" data-status="P">
+                                <button class="chamada-btn presente" data-status="P" onclick="marcarPresencaFalta(this, 'P')">P</button>
+                                <button class="chamada-btn falta" data-status="F" onclick="marcarPresencaFalta(this, 'F')">F</button>
+                            </td>
+                            <td style="padding: 10px; text-align: center;">
+                                <button class="action-btn-edit" onclick="alert('Editar Aluno 11223: Funcionalidade de Edição de Dados em desenvolvimento.')" title="Editar"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn-delete" onclick="if(confirm('Tem certeza que deseja excluir Carla Souza (RM: 11223)?')) { this.closest('tr').remove(); }" title="Excluir"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <div id="add-aluno-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-box">
+            <span class="close-btn" onclick="document.getElementById('add-aluno-modal').style.display='none'">&times;</span>
+            
+            <h4>Adicionar Novo Aluno</h4>
+            <form id="add-aluno-form">
+                <div style="margin-bottom: 15px;">
+                    <label for="novo-rm">RM:</label>
+                    <input type="text" id="novo-rm" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="novo-nome">Nome do Aluno:</label>
+                    <input type="text" id="novo-nome" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="nova-turma">Turma:</label>
+                    <select id="nova-turma" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;">
+                        <option value="2º Info - Bloco A">2º Info - Bloco A</option>
+                        <option value="3º Info - Bloco B">3º Info - Bloco B</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-gerenciar" style="margin-top: 10px; background-color: #28a745;">
+                    Salvar Cadastro (Simulado)
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="js/dados-prof.js"></script>
+    <script>
+        // Função JS para marcar Presença/Falta (Simulação)
+        function marcarPresencaFalta(button, status) {
+            const td = button.closest('td');
+            const tr = button.closest('tr');
+            
+            // Remove o destaque de todos os botões na célula
+            td.querySelectorAll('.chamada-btn').forEach(btn => {
+                btn.style.backgroundColor = '';
+                btn.style.color = '#333';
+                btn.style.borderColor = '#ccc';
+            });
+
+            // Aplica o destaque ao botão clicado e marca a linha
+            if (status === 'P') {
+                button.style.backgroundColor = '#008000'; // Verde forte
+                button.style.color = 'white';
+                tr.classList.remove('aluno-ausente');
+                // alert(`Presença marcada para ${tr.cells[1].textContent.trim()}.`); // Opcional
+            } else if (status === 'F') {
+                button.style.backgroundColor = '#cc0000'; // Vermelho forte
+                button.style.color = 'white';
+                tr.classList.add('aluno-ausente');
+                // alert(`Falta marcada para ${tr.cells[1].textContent.trim()}.`); // Opcional
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Carregar o nome do professor no sidebar
+            const data = window.professor;
+            if (data) {
+                const professorName = document.getElementById('professor-name');
+                const professorCode = document.getElementById('professor-code');
+                if (professorName) professorName.textContent = data.nome;
+                if (professorCode) professorCode.textContent = data.codigo;
+                document.getElementById('user-name').textContent = data.nome;
+            }
+
+            // --- LÓGICA DE SIMULAÇÃO DE CADASTRO ---
+            const modal = document.getElementById('add-aluno-modal');
+            const form = document.getElementById('add-aluno-form');
+            const tbody = document.getElementById('student-table-body');
+            const btnAbrir = document.getElementById('abrir-cadastro');
+
+            // 1. Abrir Modal
+            btnAbrir.addEventListener('click', () => {
+                modal.style.display = 'flex';
+            });
+
+            // 2. Fechar Modal ao clicar fora
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // 3. Processar o Formulário (Simulação de Salvar)
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const rm = document.getElementById('novo-rm').value.trim();
+                const nome = document.getElementById('novo-nome').value.toUpperCase().trim();
+                const turma = document.getElementById('nova-turma').value;
+
+                if (!rm || !nome) {
+                    alert('Preencha todos os campos.');
+                    return;
+                }
+
+                // Cria a nova linha na tabela
+                const newRow = document.createElement('tr');
+                newRow.style.borderBottom = '1px solid #eee'; 
+                newRow.innerHTML = `
+                    <td style="padding: 10px;">${rm}</td>
+                    <td style="padding: 10px;">${nome} <span style="font-weight: bold; color: green;">(NOVO)</span></td>
+                    <td style="padding: 10px;">${turma}</td>
+                    <td style="padding: 10px; text-align: center;" data-status="P">
+                        <button class="chamada-btn presente" data-status="P" onclick="marcarPresencaFalta(this, 'P')" style="background-color: #008000; color: white;">P</button>
+                        <button class="chamada-btn falta" data-status="F" onclick="marcarPresencaFalta(this, 'F')">F</button>
+                    </td>
+                    <td style="padding: 10px; text-align: center;">
+                        <button class="action-btn-edit" onclick="alert('Editar Aluno ${rm}: Funcionalidade de Edição de Dados em desenvolvimento.')" title="Editar"><i class="fas fa-edit"></i></button>
+                        <button class="action-btn-delete" onclick="if(confirm('Tem certeza que deseja excluir ${nome} (RM: ${rm})?')) { this.closest('tr').remove(); }" title="Excluir"><i class="fas fa-trash-alt"></i></button>
+                    </td>
+                `;
+                
+                // Adiciona a nova linha no topo da tabela
+                tbody.prepend(newRow); 
+
+                // Limpa e fecha o modal
+                form.reset();
+                modal.style.display = 'none';
+                alert(`Aluno ${nome} (RM: ${rm}) CADASTRADO COM SUCESSO! (Simulado)`);
+            });
+        });
+    </script>
+</body>
+</html>

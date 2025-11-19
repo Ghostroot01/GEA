@@ -1,0 +1,65 @@
+[
+  {
+    "id": "aluno01",
+    "nome": "João Pedro",
+    "rm": "12345",
+    "turma": "3° TADS",
+    "foto": "img/alunos/joao-pedro.jpg",
+    "especificacoes": "Jovem Aprendiz",
+    "observacoes": "Trabalha como assistente de TI nas tardes, sendo liberado às 15h"
+  },
+  {
+    "id": "aluno02",
+    "nome": "Maria Eduarda",
+    "rm": "12346",
+    "turma": "3° TADS",
+    "foto": "img/alunos/maria-eduarda.jpg",
+    "especificacoes": "Vai embora mais cedo",
+    "observacoes": "Sai às 16h para compromisso familiar"
+  },
+  {
+    "id": "aluno03",
+    "nome": "Carlos Roberto",
+    "rm": "12347",
+    "turma": "3° TADS",
+    "foto": "img/alunos/carlos-roberto.jpg",
+    "especificacoes": "Aluno com necessidades especiais",
+    "observacoes": "Necessita de apoio na escrita e acompanhamento em atividades práticas"
+  },
+  {
+    "id": "aluno04",
+    "nome": "Ana Clara",
+    "rm": "12348",
+    "turma": "3° TADS",
+    "foto": "img/alunos/ana-clara.jpg",
+    "especificacoes": "Nenhuma",
+    "observacoes": "Aluno com bom desempenho acadêmico, sem necessidades especiais"
+  },
+  {
+    "id": "aluno05",
+    "nome": "Felipe Souza",
+    "rm": "12349",
+    "turma": "3° TADS",
+    "foto": "img/alunos/felipe-souza.jpg",
+    "especificacoes": "Aluno com necessidades de acompanhamento",
+    "observacoes": "Precisa de apoio em matemática e redação"
+  },
+  {
+    "id": "aluno06",
+    "nome": "Luana Costa",
+    "rm": "12350",
+    "turma": "3° TADS",
+    "foto": "img/alunos/luana-costa.jpg",
+    "especificacoes": "Horário Flexível (Estudo Remoto)",
+    "observacoes": "Estuda remotamente em disciplinas de teoria e presencialmente em práticas laboratoriais"
+  },
+  {
+    "id": "aluno07",
+    "nome": "Ricardo Lima",
+    "rm": "12351",
+    "turma": "3° TADS",
+    "foto": "img/alunos/ricardo-lima.jpg",
+    "especificacoes": "Vai embora mais cedo",
+    "observacoes": "Precisa sair às 15h para trabalhar no estágio"
+  }
+]

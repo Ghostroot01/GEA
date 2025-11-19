@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Professor | NSA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logos">
+                <img src="img/logo-etec.png" alt="Logotipo Etec" class="logo">
+                <img src="img/logo-saopaulo.png" alt="Logotipo Governo de São Paulo" class="logo">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="professor.html">Início</a></li> 
+                    <li><a href="gerenciar.html">Gerenciar</a></li>
+                    
+                    <li><a href="aulas-do-dia.html">Aulas do Dia</a></li> 
+                    
+                    <li><a href="mensagens.html">Mensagens</a></li>
+                    <li><a href="relatorios.html">Relatórios</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <img src="img/foto-professor.jpg" alt="Foto do Professor" class="user-photo">
+                <div class="user-info">
+                    <span id="user-name">Jaqueline Ferreira</span>
+                    <a href="login.html" class="logout-link">Sair</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <div class="sidebar">
+            <div class="profile-card">
+                <img src="img/foto-professor.jpg" alt="Foto do Professor" class="user-photo-large">
+                <div class="user-info-large">
+                    <span id="professor-name"></span>
+                    <span id="professor-code"></span>
+                    <div class="block-info">
+                        <h4>TIPO DE USUÁRIO: Administrador</h4>
+                        <p>Bloco de notas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="messages-section">
+                <h3>Mensagens não Lidas</h3>
+                <table class="messages-table">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Assunto</th>
+                            <th>Remetente</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>08/09/2025</td><td>Horário de plantão</td><td>Coordenação</td></tr>
+                        <tr><td>07/09/2025</td><td>Alteração no cronograma de aulas</td><td>Maria Souza</td></tr>
+                        <tr><td>06/09/2025</td><td>Requisição de material didático</td><td>Luiz Pereira</td></tr>
+                        <tr><td>05/09/2025</td><td>Solicitação de orientação acadêmica</td><td>Fernanda Alves</td></tr>
+                        <tr><td>04/09/2025</td><td>Informe sobre o calendário de provas</td><td>Diretoria</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="notifications-section">
+                <h3>Notificações</h3>
+                <div class="notifications-grid">
+                    <a href="chamadas.html" class="notification-item">
+                        <img src="img/icon-chamadas.png" alt="Chamadas">
+                        <span>Chamadas</span>
+                    </a>
+                    <a href="agendamentos.html" class="notification-item">
+                        <img src="img/icon-agendamentos.png" alt="Agendamentos">
+                        <span>Agendamentos</span>
+                    </a>
+                    <a href="mencoes.html" class="notification-item">
+                        <img src="img/icon-mencoes.png" alt="Menções">
+                        <span>Menções</span>
+                    </a>
+                    <a href="relatar-problemas.html" class="notification-item">
+                        <img src="img/icon-relatar.png" alt="Relatar Problemas">
+                        <span>Relatar Problemas</span>
+                    </a>
+                </div>
+            </div>
+            
+            </div>
+    </main>
+    
+    <script src="js/dados-prof.js"></script>
+    <script src="js/professor.js"></script> 
+    </body>
+</html>

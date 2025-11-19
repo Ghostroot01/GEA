@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aulas e Faltas | Painel do Aluno</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+  <script src="js/echarts.min.js"></script>
+</head>
+
+<body>
+
+  <header class="main-header">
+    <div class="header-content">
+      <div class="logos">
+        <img src="img/logo-etec.png" alt="Logotipo Etec" class="logo">
+        <img src="img/logo-saopaulo.png" alt="Logotipo Governo de São Paulo" class="logo">
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="#">Downloads</a></li>
+          <li class="has-submenu">
+            <a href="#">Diário</a>
+            <ul class="submenu">
+              <li><a href="faltas.html">Aulas e Faltas</a></li>
+              <li><a href="#">Horário</a></li>
+              <li><a href="#">Avaliações Previstas</a></li>
+              <li><a href="#">Controle de Entrada e Saída</a></li>
+              <li><a href="#">Aproveitamento de Estudos</a></li>
+              <li><a href="#">Suas Equipes no Teams</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Mensagens</a></li>
+          <li><a href="#">Portal Office 365</a></li>
+        </ul>
+      </nav>
+      <div class="user-profile">
+        <img src="img/foto-aluno.jpg" alt="Foto do Aluno" class="user-photo">
+        <div class="user-info">
+          <span id="user-name"></span>
+          <a href="#" class="logout-link">Sair</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="absence-content">
+    <div class="welcome-banner">
+      <h2>Aulas e Faltas</h2>
+      <p>Acompanhe sua frequência escolar detalhada por disciplina.</p>
+    </div>
+
+    <div class="card-container">
+      <div class="card">
+        <h3>Total de Faltas</h3>
+        <p id="total-faltas">Carregando...</p>
+      </div>
+      <div class="card">
+        <h3>Total de Aulas</h3>
+        <p id="total-aulas">Carregando...</p>
+      </div>
+      <div class="card">
+        <h3>Porcentagem de Presença</h3>
+        <div class="chart-container" id="main" style="width: 100%;height:300px;"></div>
+        <script type="text/javascript">
+          // Initialize the echarts instance based on the prepared dom
+          var myChart = echarts.init(document.getElementById('main'));
+
+          // Specify the configuration items and data for the chart
+          option = {
+            tooltip: {
+              trigger: 'item'
+            },
+            legend: {
+              top: '5%',
+              left: 'center'
+            },
+            series: [
+              {
+                name: 'Access From',
+                type: 'pie',
+                radius: ['40%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                  show: false,
+                  position: 'center'
+                },
+                emphasis: {
+                  label: {
+                    show: true,
+                    fontSize: 14,
+                    fontWeight: 'bold'
+                  }
+                },
+                labelLine: {
+                  show: false
+                },
+                data: [
+                  { value: 1048, name: 'Presenças' },
+                  { value: 735, name: 'Faltas' },
+                ]
+              }
+            ]
+          };
+          // Display the chart using the configuration items and data just specified.
+          myChart.setOption(option);
+        </script>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>Detalhes por Disciplina</h3>
+      <ul id="discipline-list">
+      </ul>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

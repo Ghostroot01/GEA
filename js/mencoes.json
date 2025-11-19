@@ -1,0 +1,42 @@
+[
+  {
+    "titulo": "Novo cronograma de provas",
+    "conteudo": "A coordenação atualizou o cronograma das provas finais. Confira a página de Avisos para mais detalhes sobre as datas e horários.",
+    "data": "17/09/2025"
+  },
+  {
+    "titulo": "Aula cancelada amanhã",
+    "conteudo": "A aula de 'Banco de Dados' de amanhã, 20/09, foi cancelada. Fique atento para novas atualizações.",
+    "data": "19/09/2025"
+  },
+  {
+    "titulo": "Aula extra de Lógica de Programação",
+    "conteudo": "Haverá uma aula extra de 'Lógica de Programação' na próxima sexta-feira, 22/09, às 18h. Todos estão convidados a participar.",
+    "data": "18/09/2025"
+  },
+  {
+    "titulo": "Comentário do aluno Carla",
+    "conteudo": "A aluna Carla fez um elogio sobre o conteúdo da última aula: 'A explicação sobre segurança da informação foi ótima!'.",
+    "data": "17/09/2025"
+  },
+  {
+    "titulo": "Lembrete: entrega de trabalhos",
+    "conteudo": "Lembramos que o prazo para a entrega dos trabalhos de 'Sistemas Operacionais' é até o dia 25/09. Não deixe para última hora!",
+    "data": "19/09/2025"
+  },
+  {
+    "titulo": "Aviso sobre a biblioteca",
+    "conteudo": "A biblioteca estará fechada na próxima segunda-feira, 21/09, devido a manutenção. Aproveite para fazer os empréstimos antecipadamente.",
+    "data": "18/09/2025"
+  },
+  {
+    "titulo": "Solicitação de revisão de prova",
+    "conteudo": "O aluno Daniel solicitou uma revisão da prova de 'Matemática Discreta'. O atendimento será feito na próxima quarta-feira, 23/09.",
+    "data": "17/09/2025"
+  },
+  {
+    "titulo": "Próximo encontro sobre Programação Web",
+    "conteudo": "O próximo encontro de 'Programação Web' será na quinta-feira, 24/09. Não perca! Vamos abordar novos tópicos de front-end.",
+    "data": "19/09/2025"
+  }
+]

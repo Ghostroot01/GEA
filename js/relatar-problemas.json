@@ -1,0 +1,42 @@
+[
+  {
+    "titulo": "Computadores do laboratório apresentando lentidão",
+    "conteudo": "Alguns computadores do Laboratório 2 estão com desempenho lento, principalmente ao abrir softwares como NetBeans e MySQL Workbench. A equipe de suporte já está avaliando os equipamentos.",
+    "data": "19/09/2025"
+  },
+  {
+    "titulo": "Travamentos durante uso do editor de código",
+    "conteudo": "Relatos indicam que o editor de código instalado nas máquinas (VS Code) está travando com frequência. Reinstalações estão sendo feitas para corrigir o problema.",
+    "data": "18/09/2025"
+  },
+  {
+    "titulo": "Problemas com acesso à internet no laboratório",
+    "conteudo": "O sinal de internet no Laboratório 1 está instável, afetando o acesso a plataformas de ensino. A equipe de rede está trabalhando para resolver o problema o mais breve possível.",
+    "data": "18/09/2025"
+  },
+  {
+    "titulo": "Máquinas não ligam corretamente",
+    "conteudo": "Alguns alunos relataram que computadores não estão inicializando corretamente no turno da manhã. Suspeita-se de falha nos estabilizadores. Equipamentos estão sendo revisados.",
+    "data": "17/09/2025"
+  },
+  {
+    "titulo": "Instabilidade no software de simulação de redes",
+    "conteudo": "O Packet Tracer está apresentando falhas ao simular topologias básicas em várias máquinas. Uma atualização do software será aplicada.",
+    "data": "16/09/2025"
+  },
+  {
+    "titulo": "Erro no carregamento de sistemas operacionais",
+    "conteudo": "Durante o uso dual boot, alguns computadores não estão reconhecendo o Linux corretamente. A equipe técnica irá reinstalar os sistemas afetados.",
+    "data": "15/09/2025"
+  },
+  {
+    "titulo": "Impressora fora de operação no setor de TI",
+    "conteudo": "A impressora compartilhada do setor de TI está com falha de comunicação com a rede e temporariamente fora de serviço.",
+    "data": "14/09/2025"
+  },
+  {
+    "titulo": "Lentidão ao abrir arquivos grandes",
+    "conteudo": "Alunos do curso de Design relataram lentidão ao abrir arquivos PSD e AI nos computadores do Laboratório 3. A verificação de memória RAM está em andamento.",
+    "data": "13/09/2025"
+  }
+]
