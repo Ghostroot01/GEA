@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Conteúdo | NSA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logos">
+                <img src="img/logo-etec.png" alt="Logotipo Etec" class="logo">
+                <img src="img/logo-saopaulo.png" alt="Logotipo Governo de São Paulo" class="logo">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="professor.html">Início</a></li>
+                    <li><a href="gerenciar.html">Gerenciar</a></li>
+                    <li><a href="aulas-do-dia.html">Aulas do Dia</a></li>
+                    <li><a href="mensagens.html">Mensagens</a></li>
+                    <li><a href="relatorios.html">Relatórios</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <img src="img/foto-professor.jpg" alt="Foto do Professor" class="user-photo">
+                <div class="user-info">
+                    <span id="user-name">Professor(a)</span>
+                    <a href="login.html" class="logout-link">Sair</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <div class="sidebar">
+            <div class="profile-card">
+                <img src="img/foto-professor.jpg" alt="Foto do Professor" class="user-photo-large">
+                <div class="user-info-large">
+                    <span id="professor-name"></span>
+                    <span id="professor-code"></span>
+                    <div class="block-info">
+                        <h4>TIPO DE USUÁRIO: ADMINISTRADOR</h4>
+                        <p>Bloco de notas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <section id="registro-conteudo-section" class="content-section">
+                <h3>Registro de Conteúdo Lecionado</h3>
+                <p>Use o botão abaixo para registrar o conteúdo da aula do dia e visualize o histórico de todas as turmas de Informática.</p>
+                
+                <div class="controls-row" style="margin-bottom: 25px;">
+                    <button id="abrir-registro-modal" class="btn-gerenciar" style="width: auto; background-color: #f79646;">
+                        <i class="fas fa-book"></i> Registrar Conteúdo de Hoje
+                    </button>
+                </div>
+
+                <div class="historico-card">
+                    <h4>Histórico de Conteúdos Registrados (Simulado)</h4>
+                    <table class="historico-table" style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                        <thead>
+                            <tr style="background-color: #0056b3; color: white;">
+                                <th style="padding: 12px; text-align: left; width: 100px;">Data</th>
+                                <th style="padding: 12px; text-align: left; width: 150px;">Turma</th>
+                                <th style="padding: 12px; text-align: left;">Conteúdo Lecionado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historico-conteudo-body">
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 10px;">25/10/2025</td>
+                                <td style="padding: 10px;">2º Info - Bloco A</td>
+                                <td style="padding: 10px;">Revisão de Estrutura de Repetição (Laços For e While). Correção de Exercícios 5 e 6 em JavaScript.</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9; border-bottom: 1px solid #eee;">
+                                <td style="padding: 10px;">24/10/2025</td>
+                                <td style="padding: 10px;">3º Info - Bloco B</td>
+                                <td style="padding: 10px;">Introdução ao Business Model Canvas (BMC) aplicado a Startups de Tecnologia. Discussão sobre Proposta de Valor.</td>
+                            </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <div id="registro-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-box">
+            <span class="close-btn" onclick="document.getElementById('registro-modal').style.display='none'">&times;</span>
+            
+            <h4>Registrar Conteúdo da Aula</h4>
+            <form id="registro-conteudo-form">
+                <div style="margin-bottom: 15px;">
+                    <label for="data-registro">Data:</label>
+                    <input type="date" id="data-registro" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="turma-registro">Turma:</label>
+                    <select id="turma-registro" required style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;">
+                        <option value="2º Info - Bloco A">2º Info - Bloco A</option>
+                        <option value="3º Info - Bloco B">3º Info - Bloco B</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="conteudo-registro">Conteúdo:</label>
+                    <textarea id="conteudo-registro" rows="4" required placeholder="Descreva o que foi ensinado e as atividades realizadas..." style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+                </div>
+                <button type="submit" class="btn-gerenciar" style="margin-top: 10px; background-color: #f79646;">
+                    Salvar Registro (Simulado)
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="js/dados-prof.js"></script>
+    <script>
+        // Função para formatar a data
+        function formatDate(date) {
+            const d = new Date(date);
+            let day = '' + d.getDate();
+            let month = '' + (d.getMonth() + 1);
+            const year = d.getFullYear();
+
+            if (day.length < 2) day = '0' + day;
+            if (month.length < 2) month = '0' + month;
+
+            return [day, month, year].join('/');
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Carregar o nome do professor no sidebar
+            const data = window.professor;
+            if (data) {
+                const professorName = document.getElementById('professor-name');
+                const professorCode = document.getElementById('professor-code');
+                if (professorName) professorName.textContent = data.nome;
+                if (professorCode) professorCode.textContent = data.codigo;
+                document.getElementById('user-name').textContent = data.nome;
+            }
+
+            // --- LÓGICA DE SIMULAÇÃO DE REGISTRO DE CONTEÚDO ---
+            const modal = document.getElementById('registro-modal');
+            const form = document.getElementById('registro-conteudo-form');
+            const tbody = document.getElementById('historico-conteudo-body');
+            const btnAbrir = document.getElementById('abrir-registro-modal');
+
+            // 1. Abrir Modal e preencher data atual
+            btnAbrir.addEventListener('click', () => {
+                document.getElementById('data-registro').valueAsDate = new Date(); // Preenche com a data de hoje
+                modal.style.display = 'flex';
+            });
+
+            // 2. Fechar Modal ao clicar fora
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // 3. Processar o Formulário (Simulação de Salvar)
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const dataInput = document.getElementById('data-registro').value;
+                const dataFormatada = formatDate(dataInput);
+                const turma = document.getElementById('turma-registro').value;
+                const conteudo = document.getElementById('conteudo-registro').value.trim();
+
+                if (!conteudo) {
+                    alert('Por favor, descreva o conteúdo lecionado.');
+                    return;
+                }
+
+                // Cria a nova linha na tabela (Ação de simulação de sucesso)
+                const newRow = document.createElement('tr');
+                newRow.style.borderBottom = '1px solid #eee'; 
+                newRow.style.backgroundColor = '#e9f7ff'; // Destaque para o novo registro
+                newRow.innerHTML = `
+                    <td style="padding: 10px; font-weight: bold;">${dataFormatada}</td>
+                    <td style="padding: 10px;">${turma}</td>
+                    <td style="padding: 10px;">${conteudo}</td>
+                `;
+                
+                // Adiciona a nova linha no topo da tabela (mais recente primeiro)
+                tbody.prepend(newRow); 
+
+                // Limpa e fecha o modal
+                form.reset();
+                modal.style.display = 'none';
+                alert(`Registro de conteúdo de ${turma} salvo com sucesso! (Simulado)`);
+            });
+        });
+    </script>
+</body>
+</html>

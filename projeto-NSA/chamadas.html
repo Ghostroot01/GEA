@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamadas | Painel do Professor | NSA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logos">
+                <img src="img/logo-etec.png" alt="Logotipo Etec" class="logo">
+                <img src="img/logo-saopaulo.png" alt="Logotipo Governo de São Paulo" class="logo">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="professor.html">Início</a></li>
+                    <li><a href="#">Gerenciar</a></li>
+                    <li><a href="#">Mensagens</a></li>
+                    <li><a href="#">Relatórios</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <img src="img/foto-professor.jpg" alt="Foto do Professor" class="user-photo">
+                <div class="user-info">
+                    <span id="user-name">Professor(a)</span>
+                    <a href="login.html" class="logout-link">Sair</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Controle de Presença</h2>
+            <div class="course-selector">
+                <label for="course-select">Selecione a Turma:</label>
+                <select id="course-select">
+                    <option value="informatica">Informática</option>
+                    <option value="enfermagem">Enfermagem</option>
+                </select>
+            </div>
+            
+            <table id="attendance-table">
+                <thead>
+                    <tr>
+                        <th>Nome do Aluno</th>
+                        <th>Presença</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+            
+            <button id="save-attendance-btn">Salvar Presenças</button>
+        </div>
+    </main>
+    <div class="attendance-records">
+    <h3>Registro de Presenças</h3>
+    <table id="records-table">
+        <thead>
+            <tr>
+                <th>Aluno</th>
+                <th>Status</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+    </table>
+</div>
+    <aside id="student-info-panel" class="student-info-panel">
+      <img id="panel-photo" src="" alt="Foto do Aluno">
+      <h4 id="panel-name"></h4>
+      <p id="panel-specs"></p>
+      <p id="panel-notes"></p>
+  </aside>
+
+    <script src="js/chamadas.js"></script>
+</body>
+</html>
