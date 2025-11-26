@@ -1709,4 +1709,35 @@ button[type="submit"]:hover {
     border-color: #007bff;
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+
+}
+/* ========================================= */
+/* AJUSTE PARA O BOTÃO DE FECHAR NO PAINEL LATERAL (chamadas.html) */
+/* Este estilo é mais específico e garante o posicionamento. */
+/* ========================================= */
+
+.student-info-panel {
+    /* (Seu código já tem a posição fixa e transição para esconder/mostrar) */
+    position: fixed; /* Manter! */
+    right: -350px; /* Manter! */
+    /* ...outras regras... */
+}
+
+/* ⭐️ ESTE É O BLOCO DE CÓDIGO QUE VOCÊ DEVE ADICIONAR ⭐️ */
+.student-info-panel .close-btn {
+    position: absolute; /* Para posicionar em relação ao aside (.student-info-panel) */
+    top: 15px; /* Posição do topo */
+    right: 15px; /* Posição da direita */
+    background: none; /* Sem fundo */
+    border: none; /* Sem borda */
+    font-size: 1.5em; /* Tamanho maior para o X */
+    font-weight: bold;
+    color: #6c757d; /* Cor sutil */
+    cursor: pointer;
+    z-index: 1001; /* Garante que fique acima de outros elementos do painel */
+    transition: color 0.2s;
+}
+
+.student-info-panel .close-btn:hover {
+    color: #333; /* Escurece no hover */
 }
