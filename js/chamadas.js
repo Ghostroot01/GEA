@@ -3,7 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const recordsTableBody = document.querySelector('#records-table tbody');
     const studentInfoPanel = document.getElementById('student-info-panel');
     const saveButton = document.getElementById('save-attendance-btn');
-    const courseSelect = document.getElementById('course-select'); 
+    const courseSelect = document.getElementById('course-select');
+    
+    // ⭐️ NOVO ELEMENTO: Botão de Fechar Painel ⭐️
+    const closePanelButton = document.getElementById('close-panel-btn');
 
     let studentsData = [];
     let attendanceRecords = []; // ⭐️ AGORA COMEÇA VAZIA ⭐️
@@ -65,6 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // ⭐️ NOVA FUNÇÃO: Esconder o Painel ⭐️
+    function hidePanel() {
+        studentInfoPanel.classList.remove('active');
+    }
+
     // Função para exibir o painel (mantida)
     function showPanel(studentId) {
         const student = studentsData.find(s => s.id === studentId);
@@ -84,17 +92,21 @@ document.addEventListener("DOMContentLoaded", () => {
             const studentId = cell.getAttribute('data-id');
             cell.addEventListener('click', () => showPanel(studentId));
         });
+        
+        // ⭐️ NOVO EVENTO: Fechar o Painel ao clicar no 'X' ⭐️
+        if (closePanelButton) {
+            closePanelButton.addEventListener('click', hidePanel);
+        }
     }
     
     // -----------------------------------------------------------
     // LÓGICA DE REGISTRO DE PRESENÇAS (AJUSTADA)
     // -----------------------------------------------------------
 
-    // ⭐️ FUNÇÃO renderAttendanceRecords AGORA É MAIS SIMPLES ⭐️
+    // ⭐️ FUNÇÃO renderAttendanceRecords (MANTIDA) ⭐️
     function renderAttendanceRecords() {
         recordsTableBody.innerHTML = '';
         if (attendanceRecords.length === 0) {
-            // Mensagem clara de que não há histórico, como você solicitou.
             recordsTableBody.innerHTML = '<tr><td colspan="3">Ainda não há registros de presença salvos nesta sessão.</td></tr>';
             return;
         }
@@ -145,6 +157,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
     loadStudents();
     
-    // ⭐️ CHAMADA INICIAL: A tabela de registros é renderizada VAZIA ⭐️
+    // CHAMADA INICIAL: A tabela de registros é renderizada VAZIA
     renderAttendanceRecords(); 
 });
