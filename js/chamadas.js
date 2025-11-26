@@ -3,22 +3,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const recordsTableBody = document.querySelector('#records-table tbody');
     const studentInfoPanel = document.getElementById('student-info-panel');
     const saveButton = document.getElementById('save-attendance-btn');
-    const courseSelect = document.getElementById('course-select'); // ⭐️ NOVO: Seleção de Turma
+    const courseSelect = document.getElementById('course-select'); 
 
     let studentsData = [];
-    let attendanceRecords = [];
+    let attendanceRecords = []; // ⭐️ AGORA COMEÇA VAZIA ⭐️
 
-    // Função para carregar os dados dos alunos do arquivo JSON
+    // -----------------------------------------------------------
+    // LÓGICA DE CARREGAMENTO E FILTRO DE ALUNOS (MANTIDA)
+    // -----------------------------------------------------------
+
     async function loadStudents() {
         try {
-            // Assumindo que seu JSON está em 'js/dados-alunos.json'
+            // Carrega os dados dos alunos (com as turmas A e B)
             const response = await fetch('js/dados-alunos.json'); 
             if (!response.ok) {
                 throw new Error('Erro ao carregar os dados dos alunos.');
             }
             studentsData = await response.json();
             
-            // ⭐️ ATENÇÃO: Carrega a tabela com o valor inicial do dropdown ('todos' ou 'turma-a')
+            // Carrega a tabela com o valor inicial do dropdown
             renderStudents(courseSelect.value); 
         } catch (error) {
             console.error('Erro ao carregar os alunos:', error);
@@ -26,13 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // ⭐️ FUNÇÃO AJUSTADA: Agora recebe o filtro de turma
     function renderStudents(filtroTurma) {
         attendanceTableBody.innerHTML = '';
         
-        // Filtra os alunos
         const alunosFiltrados = studentsData.filter(student => {
-            // O filtro verifica se o valor é 'todos' OU se a turma do aluno corresponde ao filtro
             return filtroTurma === 'todos' || student.turma === filtroTurma; 
         });
 
@@ -57,24 +57,19 @@ document.addEventListener("DOMContentLoaded", () => {
         attachClickEvents();
     }
     
-    // ⭐️ NOVO EVENTO DE ESCUTA PARA O DROPDOWN 
     if (courseSelect) {
         courseSelect.addEventListener('change', (event) => {
             const turmaSelecionada = event.target.value;
-            renderStudents(turmaSelecionada); // Recarrega a tabela com o filtro
-            studentInfoPanel.classList.remove('active'); // Esconde o painel lateral ao mudar de turma
+            renderStudents(turmaSelecionada); 
+            studentInfoPanel.classList.remove('active');
         });
     }
-    // FIM DO NOVO EVENTO ⭐️
 
-    // Função para exibir o painel
+    // Função para exibir o painel (mantida)
     function showPanel(studentId) {
         const student = studentsData.find(s => s.id === studentId);
         if (!student) return;
 
-        // Se você mudou o JSON para ter 'turma', use aqui:
-        // document.getElementById('panel-specs').textContent = `Turma: ${student.turma}`;
-        
         document.getElementById('panel-photo').src = student.foto || 'img/default-avatar.png';
         document.getElementById('panel-name').textContent = student.nome;
         document.getElementById('panel-specs').textContent = `Especificações: ${student.especificacoes}`;
@@ -83,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
         studentInfoPanel.classList.add('active');
     }
 
-    // Função para anexar o evento de clique
     function attachClickEvents() {
         const studentNameCells = document.querySelectorAll('.student-name');
         studentNameCells.forEach(cell => {
@@ -91,28 +85,21 @@ document.addEventListener("DOMContentLoaded", () => {
             cell.addEventListener('click', () => showPanel(studentId));
         });
     }
+    
+    // -----------------------------------------------------------
+    // LÓGICA DE REGISTRO DE PRESENÇAS (AJUSTADA)
+    // -----------------------------------------------------------
 
-    // --- NOVA LÓGICA PARA REGISTRO DE PRESENÇAS (MANTIDA) ---
-    async function loadAttendanceRecords() {
-        try {
-            const response = await fetch('js/registros-presenca.json');
-            if (!response.ok) {
-                throw new Error('Erro ao carregar os registros de presença.');
-            }
-            attendanceRecords = await response.json();
-            renderAttendanceRecords();
-        } catch (error) {
-            console.error('Erro ao carregar os registros:', error);
-            recordsTableBody.innerHTML = '<tr><td colspan="3">Nenhum registro encontrado.</td></tr>';
-        }
-    }
-
+    // ⭐️ FUNÇÃO renderAttendanceRecords AGORA É MAIS SIMPLES ⭐️
     function renderAttendanceRecords() {
         recordsTableBody.innerHTML = '';
         if (attendanceRecords.length === 0) {
-            recordsTableBody.innerHTML = '<tr><td colspan="3">Nenhum registro encontrado.</td></tr>';
+            // Mensagem clara de que não há histórico, como você solicitou.
+            recordsTableBody.innerHTML = '<tr><td colspan="3">Ainda não há registros de presença salvos nesta sessão.</td></tr>';
             return;
         }
+        
+        // Renderiza apenas os registros que estão no array attendanceRecords
         attendanceRecords.forEach(record => {
             const row = document.createElement('tr');
             row.innerHTML = `
@@ -123,10 +110,10 @@ document.addEventListener("DOMContentLoaded", () => {
             recordsTableBody.appendChild(row);
         });
     }
-
+    
     saveButton.addEventListener('click', () => {
         const newRecords = [];
-        // Agora, só salvamos os registros da turma que está visível!
+        // Pega apenas as linhas que estão visíveis após o filtro
         const attendanceRows = document.querySelectorAll('#attendance-table tbody tr'); 
         const currentDate = new Date().toLocaleDateString('pt-BR');
 
@@ -143,11 +130,21 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
+        // Adiciona os NOVOS registros à variável attendanceRecords
         attendanceRecords = attendanceRecords.concat(newRecords);
-        renderAttendanceRecords();
-        alert("Presenças salvas com sucesso!");
+        
+        // Renderiza a tabela de registros APENAS COM O QUE FOI SALVO
+        renderAttendanceRecords(); 
+        
+        alert("Presenças salvas com sucesso! Veja o registro abaixo.");
     });
-
+    
+    // -----------------------------------------------------------
+    // INICIALIZAÇÃO
+    // -----------------------------------------------------------
+    
     loadStudents();
-    loadAttendanceRecords();
+    
+    // ⭐️ CHAMADA INICIAL: A tabela de registros é renderizada VAZIA ⭐️
+    renderAttendanceRecords(); 
 });
