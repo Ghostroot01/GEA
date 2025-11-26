@@ -36,14 +36,15 @@
     <main>
         <div class="container">
             <h2>Controle de Presença</h2>
+            
             <div class="course-selector">
                 <label for="course-select">Selecione a Turma:</label>
                 <select id="course-select">
-                    <option value="informatica">Informática</option>
-                    <option value="enfermagem">Enfermagem</option>
+                    <option value="todos">Todas as Turmas</option>
+                    <option value="turma-a">2º Informática - Turma A</option>
+                    <option value="turma-b">2º Informática - Turma B</option>
                 </select>
             </div>
-            
             <table id="attendance-table">
                 <thead>
                     <tr>
@@ -78,8 +79,9 @@
       <h4 id="panel-name"></h4>
       <p id="panel-specs"></p>
       <p id="panel-notes"></p>
-  </aside>
+    </aside>
 
+    <script src="js/dados-prof.js"></script>
     <script src="js/chamadas.js"></script>
 </body>
 </html>
