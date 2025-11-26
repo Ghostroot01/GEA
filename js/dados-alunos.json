@@ -1,65 +1,92 @@
 [
   {
-    "id": "aluno01",
-    "nome": "João Pedro",
-    "rm": "12345",
-    "turma": "turma-a", 
-    "foto": "img/alunos/joao-pedro.jpg",
-    "especificacoes": "Jovem Aprendiz",
-    "observacoes": "Trabalha como assistente de TI nas tardes, sendo liberado às 15h"
-  },
-  {
-    "id": "aluno02",
-    "nome": "Maria Eduarda",
-    "rm": "12346",
-    "turma": "turma-a", 
-    "foto": "img/alunos/maria-eduarda.jpg",
-    "especificacoes": "Vai embora mais cedo",
-    "observacoes": "Sai às 16h para compromisso familiar"
-  },
-  {
-    "id": "aluno03",
-    "nome": "Carlos Roberto",
-    "rm": "12347",
-    "turma": "turma-a", 
-    "foto": "img/alunos/carlos-roberto.jpg",
-    "especificacoes": "Aluno com necessidades especiais",
-    "observacoes": "Necessita de apoio na escrita e acompanhamento em atividades práticas"
-  },
-  {
-    "id": "aluno04",
-    "nome": "Ana Clara",
-    "rm": "12348",
-    "turma": "turma-b", 
-    "foto": "img/alunos/ana-clara.jpg",
+    "id": "aluno08",
+    "nome": "Beatriz Almeida",
+    "rm": "12352",
+    "turma": "turma-a",
+    "foto": "img/alunos/beatriz-almeida.jpg",
     "especificacoes": "Nenhuma",
-    "observacoes": "Aluno com bom desempenho acadêmico, sem necessidades especiais"
+    "observacoes": "Boa participação em sala e assiduidade exemplar"
   },
   {
-    "id": "aluno05",
-    "nome": "Felipe Souza",
-    "rm": "12349",
-    "turma": "turma-b", 
-    "foto": "img/alunos/felipe-souza.jpg",
-    "especificacoes": "Aluno com necessidades de acompanhamento",
-    "observacoes": "Precisa de apoio em matemática e redação"
-  },
-  {
-    "id": "aluno06",
-    "nome": "Luana Costa",
-    "rm": "12350",
-    "turma": "turma-b", 
-    "foto": "img/alunos/luana-costa.jpg",
-    "especificacoes": "Horário Flexível (Estudo Remoto)",
-    "observacoes": "Estuda remotamente em disciplinas de teoria e presencialmente em práticas laboratoriais"
-  },
-  {
-    "id": "aluno07",
-    "nome": "Ricardo Lima",
-    "rm": "12351",
-    "turma": "turma-b", 
-    "foto": "img/alunos/ricardo-lima.jpg",
+    "id": "aluno09",
+    "nome": "Gabriel Fernandes",
+    "rm": "12353",
+    "turma": "turma-a",
+    "foto": "img/alunos/gabriel-fernandes.jpg",
     "especificacoes": "Vai embora mais cedo",
-    "observacoes": "Precisa sair às 15h para trabalhar no estágio"
+    "observacoes": "Sai às 16h devido ao curso técnico no período noturno"
+  },
+  {
+    "id": "aluno10",
+    "nome": "Isabela Monteiro",
+    "rm": "12354",
+    "turma": "turma-a",
+    "foto": "img/alunos/isabela-monteiro.jpg",
+    "especificacoes": "Necessita de acompanhamento",
+    "observacoes": "Precisa de apoio em leitura e interpretação de texto"
+  },
+  {
+    "id": "aluno11",
+    "nome": "Thiago Andrade",
+    "rm": "12355",
+    "turma": "turma-a",
+    "foto": "img/alunos/thiago-andrade.jpg",
+    "especificacoes": "Jovem Aprendiz",
+    "observacoes": "Liberado às 14h para atuar como assistente administrativo"
+  },
+  {
+    "id": "aluno12",
+    "nome": "Larissa Batista",
+    "rm": "12356",
+    "turma": "turma-a",
+    "foto": "img/alunos/larissa-batista.jpg",
+    "especificacoes": "Nenhuma",
+    "observacoes": "Participa de olimpíadas acadêmicas e projetos escolares"
+  },
+  {
+    "id": "aluno13",
+    "nome": "Marcos Vinícius",
+    "rm": "12357",
+    "turma": "turma-b",
+    "foto": "img/alunos/marcos-vinicius.jpg",
+    "especificacoes": "Aluno com necessidades especiais",
+    "observacoes": "Possui laudo TDAH; necessita de orientações claras e acompanhamento"
+  },
+  {
+    "id": "aluno14",
+    "nome": "Aline Ribeiro",
+    "rm": "12358",
+    "turma": "turma-b",
+    "foto": "img/alunos/aline-ribeiro.jpg",
+    "especificacoes": "Horário Flexível",
+    "observacoes": "Faz sessões de fisioterapia às quartas, chegando às 9h"
+  },
+  {
+    "id": "aluno15",
+    "nome": "Eduardo Martins",
+    "rm": "12359",
+    "turma": "turma-b",
+    "foto": "img/alunos/eduardo-martins.jpg",
+    "especificacoes": "Vai embora mais cedo",
+    "observacoes": "Sai às 15h30 para atividades esportivas"
+  },
+  {
+    "id": "aluno16",
+    "nome": "Helena Castro",
+    "rm": "12360",
+    "turma": "turma-b",
+    "foto": "img/alunos/helena-castro.jpg",
+    "especificacoes": "Necessita de acompanhamento",
+    "observacoes": "Dificuldade em matemática, faz reforço no contraturno"
+  },
+  {
+    "id": "aluno17",
+    "nome": "Rafael Moura",
+    "rm": "12361",
+    "turma": "turma-b",
+    "foto": "img/alunos/rafael-moura.jpg",
+    "especificacoes": "Nenhuma",
+    "observacoes": "Aluno dedicado e pontual, sem anotações especiais"
   }
 ]
